@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backend</title>
+    <style>
+        #navbar
+        {
+            display: flex;
+            margin-bottom: 50px;
+            background-color: teal;
+        }
+        form
+        {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="backend.html">Backend</a>
+        <a href="frontend.html">Frontend</a>
+
+    </div>
+
+
+
+<form id="form" action="">
+    
+    NAME: <input id="name" type="text" placeholder="type your name ">
+    Image: <input id="image" type="text" placeholder="type image url ">
+    Logo: <input id="logo" type="text" placeholder="type your company logo ">
+    Role: <input id="role" type="text" placeholder="type the Role ">
+    <input type="submit">
+
+</form>
+ 
+</body>
+</html>
+
+
+<script>
+
+    document.getElementById("form").addEventListener("submit",function(e)
+    {
+        e.preventDefault();
+        var name= document.getElementById("name").value
+        var image= document.getElementById("image").value
+        var logo= document.getElementById("logo").value
+        var role= document.getElementById("role").value
+        // console.log(name,image,logo,role);
+        var data =[]
+        data.push(name,image,logo,role);
+        console.log(data);
+        localStorage.setItem("Datais",JSON.stringify(data))
+    })
+   
+
+</script>
