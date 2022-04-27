@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <style>
+        
+        * {
+            text-align: center;
+        }
+
+        form {
+            margin: auto;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            width: 33%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            height: 515px;
+            border-radius: 8px;
+
+
+        }
+
+        input {
+            text-align: left;
+            padding: 15px;
+            color: grey;
+            margin: 5px;
+
+        }
+    </style> -->
+
+</head>
+<body>
+    <div>
+        <img id="masai" src="https://sso.masaischool.com/brand_dark.svg" alt="">
+
+
+        <form id="okform">
+
+            <h2>Sign in</h2>
+            Full name
+            <input id="name" type="text" placeholder="abcuser">
+            Email
+            <input id="email" type="text" placeholder="abc@gmail.com">
+            Password
+            <input id="password" type="text" placeholder="1234567890">
+
+            <button id="btn">LogIn</button>
+
+            
+
+        </form>
+
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    document.getElementById("okform").addEventListener("submit",asus)
+    function asus()
+    {
+        event.preventDefault()
+        var name =document.getElementById("name").value
+        var email =document.getElementById("email").value
+        var password =document.getElementById("password").value
+        var data = [];
+        data.push(name,email,password)
+        var [inputName,inputEmail,inputPassword]=["abcuser","abc@gmail.com","1234567890"]
+        // console.log("hello",name,email,password,data)
+        var input=[];
+        input.push(inputName,inputEmail,inputPassword)
+            if(password==inputPassword && name==inputName && email==inputEmail)alert("Login Successful")
+            else alert("Wrong Credintial")
+           
+       
+        console.log(data)
+        // localStorage.setItem("formdata",JSON.stringify(data))
+        localStorage.getItem("formdata")
+    }
+    
+</script>
