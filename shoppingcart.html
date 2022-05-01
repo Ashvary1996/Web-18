@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPPING CART USING JS DOMt</title>
+
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: 300px 300px 300px 300px;
+            grid-gap: 20px;
+            margin: auto;
+            text-align: center;
+        }
+        .box{
+            /* border: 1px solid grey; */
+            width: 100%;
+        }
+        h4{
+            color:rgb(121, 116, 116);
+        }
+        .price1{
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 20px;
+            /* border: 1px solid grey; */
+        }
+        .price1>h4{
+           /* color: red; */
+           text-decoration: line-through;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+
+    </div>
+</body>
+</html>
+
+<script>
+
+var data = [
+    {
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+               imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+ strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+
+data.map(function(ele){
+var div1 = document.createElement("div");
+div1.setAttribute("class","box")
+var div2 = document.createElement("div");
+div2.setAttribute("class","price1")
+var name = document.createElement("h4");
+var price = document.createElement("h2");
+var strikeoff = document.createElement("h4");
+var img=document.createElement("img");
+
+name.innerText=ele.name;
+price.innerText=ele.price;
+strikeoff.innerText=ele.strikedOffPrice;
+img.src=ele.imgUrl;
+
+div2.append(price,strikeoff)
+div1.append(img,name,div2,)
+console.log(div1);
+
+document.getElementById("container").append(div1);
+
+
+
+
+})
+
+</script>

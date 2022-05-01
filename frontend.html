@@ -1,19 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Frontend</title>
+    <style>
+        
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            background-color: teal;
+            justify-content: space-around;
+        }
+        .box{
+            
+            padding: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 40%;
+
+        }
+        img{
+            width: 30%;
+            height: 20%;
+
+
+        }
+        .logo{
+            width: 10%;
+            height: 5%;
+        }
+     
+    </style>
 </head>
+
 <body>
-    
-    <div>
-        <h1>Name</h1>
-        <p></p>
-        <p></p>
-        <p></p>
+
+    <div class="navbar">
+        <h3> <a href="backend.html">Backend</a> </h3>
+        <h3><a href="frontend.html">Frontend</a> </h3>
+
+    </div>
+
+    <div id="container">
+
+
     </div>
 
 </body>
+
 </html>
+<script>
+
+var dis = JSON.parse(localStorage.getItem("Details"));
+display (dis)
+
+
+function display(dis)
+{
+
+    dis.forEach(function(elem){
+
+
+
+var box = document.createElement("div");
+box.setAttribute("class","box");
+
+var aname = document.createElement("h2");
+aname.innerText="Name: "+elem.name
+
+var aimage = document.createElement("img");
+aimage.setAttribute("src",elem.image)
+
+var alogo = document.createElement("img");
+alogo.setAttribute("src",elem.logo)
+alogo.setAttribute("class","logo");
+
+var arole = document.createElement("h4");
+arole.innerText="Role: "+elem.role
+
+box.append(aname,aimage,arole,alogo)
+
+document.getElementById("container").append(box);
+
+
+        
+    });
+
+
+
+
+
+
+
+}
+
+
+</script>

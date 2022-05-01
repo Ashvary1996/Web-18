@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>backend</title>
+    <title>Backend</title>
     <style>
-        #navbar
-        {
+        .navbar{
             display: flex;
-            margin-bottom: 50px;
+            flex-direction: row;
             background-color: teal;
+            justify-content: space-around;
         }
         form
         {
@@ -21,11 +21,11 @@
     </style>
 </head>
 <body>
-    <div id="navbar">
-        <a href="backend.html">Backend</a>
-        <a href="frontend.html">Frontend</a>
-
-    </div>
+    <div class="navbar">
+        <h3> <a href="backend.html">Backend</a> </h3>
+        <h3><a href="frontend.html">Frontend</a> </h3>
+        
+            </div>
 
 
 
@@ -44,19 +44,24 @@
 
 
 <script>
-
+    var dataArr=JSON.parse(localStorage.getItem("Details"))|| [];
     document.getElementById("form").addEventListener("submit",function(e)
     {
         e.preventDefault();
-        var name= document.getElementById("name").value
-        var image= document.getElementById("image").value
-        var logo= document.getElementById("logo").value
-        var role= document.getElementById("role").value
+        
         // console.log(name,image,logo,role);
-        var data =[]
-        data.push(name,image,logo,role);
-        console.log(data);
-        localStorage.setItem("Datais",JSON.stringify(data))
+        var data={
+        name : document.getElementById("name").value,
+        image : document.getElementById("image").value,
+        logo : document.getElementById("logo").value,
+        role : document.getElementById("role").value
+        }
+        dataArr.push(data);
+        console.log(dataArr);
+        
+        var formdata= localStorage.setItem("Details",JSON.stringify(dataArr))
+        alert("Form Submitted")
+        window.location.href="backend.html"
     })
    
 
